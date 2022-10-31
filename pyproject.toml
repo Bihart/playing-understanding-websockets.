@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "playing-with-websockets"
+version = "0.0.1"
+description = "Simple project to work/test/play with websocket both on frondend and backend."
+authors = ["Bihart <sanket.bihari@gmail.com>"]
+license = "GPLv3"
+readme = "README.org"
+packages = [{include = "playing_with_websockets"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+asyncio = "^3.4.3"
+websockets = "^10.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
