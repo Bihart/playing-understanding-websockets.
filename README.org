@@ -2,3 +2,11 @@
 
 *Go to basic* repo, the goals is play with diferentes behavior of
 websockets on both the client and the server.
+
+** Resources
+
++ https://javascript.info/websocket
++ https://docs.python.org/3/library/asyncio.html?highlight=asyncio
++ https://github.com/ninenines/cowboy
++ https://websockets.readthedocs.io/en/stable/index.html
++ https://developer.mozilla.org/en-US/docs/Web/API/WebSocket
