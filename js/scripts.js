@@ -1,17 +1,22 @@
+const state = new Map();
 const url = "ws://localhost:8765";
-const data = new Map();
 const my_ws = new WebSocket(url);
 
-function update(key_update) {
+function update_state(key_to_update) {
+    if(state.has(key_to_update)){
+        const prev_value = state.get(key_to_update);
+        state.set(key_to_update, prev_value + 1);
+    } else {
+        state.set(key_to_update, 1);
+    }
+}
+
+function update_view(key_update) {
     const curr_target =  document.getElementById(`${key_update}-value`);
-    curr_target.innerText = data.get(key_update);
+    curr_target.innerText = state.get(key_update);
 }
 my_ws.onmessage = (event) => {
-    const update_data = event.data;
-    if(data.has(update_data)){
-        data.set(update_data, data.get(update_data) + 1);
-    } else {
-        data.set(update_data, 1);
-    }
-    update(update_data);
+    const recv_data = event.data;
+    update_state(recv_data);
+    update_view(recv_data);
 }
