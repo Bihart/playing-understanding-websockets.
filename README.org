@@ -1,0 +1,4 @@
+* Playin/Understanding websockets
+
+*Go to basic* repo, the goals is play with diferentes behavior of
+websockets on both the client and the server.
