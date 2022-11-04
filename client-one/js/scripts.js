@@ -28,7 +28,6 @@ my_ws.onmessage = (event) => {
 };
 function update_view(){
     const container = document.querySelector(".graph");
-    const childres = container.children;
     const data = [...state.entries()].map(([key, value]) => {
         return {'es': key, 'frec': value};
     });
