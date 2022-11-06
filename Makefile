@@ -1,15 +1,12 @@
 live-server:
-	@echo "### $(date)" > /dev/null 2> ./log/server.erro.log
-	@firefox "http://localhost:8000/" &
-	@~/.cargo/bin/live-server -h localhost ./client-one > /dev/null 2> ./log/server.erro.log
-	@echo "Luaching Live-Server."
+	@~/.cargo/bin/live-server -h localhost ./client-one 2>&1 | \
+	xargs -I {} echo -e '\033[31m [ Live-Server] {} \033[0m'
 
 web-socket-server:
-	@echo "### $(date)" > /dev/null 2> ./log/web-socket-server.error.log
-	@poetry run ./serve.py > /dev/null 2> ./log/web-socket-server.erro.log
-	@echo "Luaching web-socket-server."
+	@poetry run ./serve.py | \
+	xargs -I {} echo -e '\033[32m [ Web-Socket-Server ] {} \033[0m'
 
-dev: live-server web-socket-server
+dev: web-socket-server live-server
 
 kill:
 	pkill live-server || true
