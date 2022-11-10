@@ -1,6 +1,6 @@
-* Playin/Understanding websockets
+* Playing/Understanding websockets
 
-*Go to basic* repo, the goals is play with diferentes behavior of
+*Go to the basics* repo, the goal is to play with the diferent behavior of the
 websockets on both the client and the server.
 
 ** Resources
